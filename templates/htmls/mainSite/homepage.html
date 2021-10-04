@@ -1,0 +1,157 @@
+{% extends 'htmls/mainSite/homebase.html' %}
+{% load static %}
+{% block title %} 
+  Homepage 
+{% endblock %} 
+
+{%block body %}
+<main id="main">
+  <!-- End Team Section -->
+
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title" data-aos="zoom-out">
+        <h2>Contact</h2>
+        <p>Contact Me</p>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-lg-4" data-aos="fade-right">
+          <div class="info">
+            <div class="name">
+              <i class="icofont-envelope"></i>
+              <h4>Name:</h4>
+              <p>Guanchen Zhao</p>
+            </div>
+
+            <div class="email">
+              <i class="icofont-envelope"></i>
+              <h4>Email:</h4>
+              <p>guanchenzhao@gmail.com</p>
+            </div>
+
+            <div class="phone">
+              <i class="icofont-phone"></i>
+              <h4>Phone:</h4>
+              <p>+1(206)574-8662</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
+          <form
+            action=""
+            method="post"
+            role="form"
+            class="email-form needs-validation"
+            novalidate
+          >
+            {% csrf_token %}
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <!-- <label for="name">Nickname</label> -->
+                <input
+                  id="name"
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  placeholder="Nickname"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Please fill in your nickname
+                </div>
+              </div>
+              <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                <!-- email -->
+                <!-- <label for="email">Email</label> -->
+                <div class="input-group">
+                  <input
+                    type="text"
+                    id="email"
+                    class="form-control col-7"
+                    placeholder="Email"
+                    required
+                  />
+                  <select
+                    class="custom-select input-group-append col-5"
+                    id="email_postfix"
+                    style="
+                      border-top-right-radius: 0.25rem;
+                      border-bottom-right-radius: 0.25rem;
+                    "
+                    required
+                  >
+                    <option value="@gmail.com" selected=""
+                      >@gmail.com</option
+                    >
+                    <option value="@qq.com">@qq.com</option>
+                    <option value="@outlook.com">@outlook.com</option>
+                    <option value="@163.com">@163.com</option>
+                    <option value="@126.com">@126.com</option>
+                    <option value="@foxmail.com">@foxmail.com</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please fill in your email
+                  </div>
+              </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                <!-- subject -->
+                <!-- <label for="subject">Subject</label> -->
+                <input
+                  id="subject"
+                  type="text"
+                  class="form-control"
+                  name="subject"
+                  placeholder="Subject"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Please fill in the subject
+                </div>
+              </div>
+              <div class="form-group col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                <!-- addition -->
+                <!-- <label for="addition">Addition</label> -->
+                <input
+                  id="addition"
+                  type="text"
+                  class="form-control"
+                  name="addition"
+                  placeholder="Additional Info"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-12 form-group">
+                <textarea
+                  class="form-control"
+                  name="message"
+                  rows="4"
+                  placeholder="Message"
+                  required
+                ></textarea>
+                <div class="invalid-feedback">
+                  Please fill in content for email
+                </div>
+              </div>
+            </div>   
+            <div class="text-center" style="font-size: 16px;">
+              <button type="submit">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Contact Section -->
+</main>
+
+<!-- Back to Top -->
+<a href="#" class="back-to-top"><i class="bx bxs-up-arrow-alt"></i></a>
+
+{% endblock %}
